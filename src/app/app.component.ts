@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import * as jquery from 'jquery';
+import { AuthService } from './service/auth.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'portifolio';
+  title = 'TECH SOLUTIO';
+
+constructor(
+  public auth: AuthService
+){}
+
 }
+

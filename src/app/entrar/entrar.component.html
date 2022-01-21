@@ -1,0 +1,70 @@
+<div class="container-fluid corFundo ">
+
+    <div class="row telaCheia d-flex align-items-md-center">
+
+        <div class="col-md-6 ">
+
+            <div class="row d-flex justify-content-center">
+
+                <div class="col-md-6">
+                    <h1 class="text-center">Entrar</h1>
+
+                    <div class="form-group">
+                        <label for="usuario">Usuário</label>
+                        <input [(ngModel)]='usuarioLogin.usuario' class="form-control corFundo" type="text" name="usuario" id="usuario1" placeholder="Usuario">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Senha">Senha</label>
+                        <input [(ngModel)]='usuarioLogin.senha' class="form-control corFundo" type="password" name="senha" id="senha1" placeholder="Senha">
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-success" (click)='entrar()'>Entrar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+     
+
+        <div class="col-md-6 ">
+
+            <div class="row d-flex justify-content-center">
+
+                <div class="col-md-6">
+                    <h1 class="text-center">Cadastrar</h1>
+
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input [(ngModel)]='usuario.nome' class="form-control corFundo" type="text" name="nome" id="nome" placeholder="Nome">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="usuario">Usuário</label>
+                        <input [(ngModel)]='usuario.usuario' class="form-control corFundo" type="text" name="usuario" id="usuario" placeholder="Usuario">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Senha">Senha</label>
+                        <input (input)='confirmSenha($event)' class="form-control corFundo" type="password" name="senha" id="senha" placeholder="Senha">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmarSenha">Confirmar senha</label>
+                        <input [(ngModel)]='usuario.senha' class="form-control corFundo" type="password" name="confirmarSenha" id="confirmarSenha" placeholder="Confirmar senha">
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-success" (click)='cadastrar()'>Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+       
+    </div>
+
+</div>

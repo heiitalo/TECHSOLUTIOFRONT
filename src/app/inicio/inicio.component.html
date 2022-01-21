@@ -1,0 +1,114 @@
+<div class="container-fluid">
+    <div class="col-md-12 d-flex justify-content-center"> <h1
+            class="text-secondary">Lista de produtos</h1></div>
+    <div class="row  col-md-12 margemb d-flex justify-content-center
+        align-items-md-start">
+
+        
+        <table class="table">
+            <thead> 
+              <tr>
+                
+                <th scope="col">Fornecedor</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Valor</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr ngFor='let produto of listaProduto' >
+                
+                <td>fornecedor</td>
+                <td>{{produto.produto}}</td>
+                <td>{{produto.valor}}</td>
+              </tr>
+              
+             
+              
+             
+            </tbody>
+           
+            
+            
+           </table>
+           
+           
+           <button type="button" class="btn btn-success" data-toggle="modal" data-target="#NovoProduto">novo produto</button>
+    </div>
+    
+</div>
+
+
+<!-- Botão para acionar modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="NovoProduto" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="TituloModalCentralizado">Novo Produto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+            <div class="form-group">
+                <label for="fornecedor">Fornecedor</label>
+                
+                <select [(ngModel)]='idFornecedor' (change)='findByIdFornecedor()' class="form-control corFundo" name="fornecedor" id="fornecedor">
+                    <option *ngFor='let item of listaFornecedor' value="{{item.id}}">{{item.fornecedor}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="produto">Produto</label>
+                <input [(ngModel)]='produto.produto'  class="form-control corFundo" type="text" name="produto" id="produto" placeholder="produto">
+            </div>
+
+            <div class="form-group">
+                <label for="valor">Valor</label>
+                <input [(ngModel)]='produto.valor'  class="form-control corFundo" type="number" min="1" step="any" name="valor" id="valor" placeholder="valor">
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-success" (click)='cadastrarProduto()'>Salvar Produto</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#NovoFornecedor">
+            Novo Fornecedor
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão para acionar modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="NovoFornecedor" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado">Título do modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="form-group">
+          <label for="fornecedor">Fornecedor</label>
+          <input [(ngModel)]='fornecedor.fornecedor'  class="form-control corFundo" type="text" name="novofornecedor" id="novoFornecedor" placeholder="Fornecedor">
+      </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" (click)='cadastrar()'>Salvar Fornecedor</button>
+      </div>
+    </div>
+  </div>
+</div>
