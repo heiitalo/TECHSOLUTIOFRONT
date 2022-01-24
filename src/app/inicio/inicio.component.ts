@@ -74,6 +74,9 @@ this.listaProduto = resp
   this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
     this.produto = resp
     alert('Produto cadastrado')
+    this.getAllProdutos()
+    this.getAllFornecedor()
+    this.produto = new Produto()
   })
 
   }
