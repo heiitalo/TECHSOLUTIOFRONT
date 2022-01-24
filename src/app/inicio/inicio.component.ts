@@ -27,19 +27,19 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(){
 
-     if(environment.token ==''){
-       alert('Logue para poder continuar')
-       this.router.navigate(['/entrar'])
-     }
+    //  if(environment.token ==''){
+    //    alert('Logue para poder continuar')
+    //    this.router.navigate(['/entrar'])
+    //  }
 
-     this.findAllFornecedor()
+     this.getAllFornecedor()
      this.getAllProdutos()
 
      this.fornecedorService.refreshToken
     
   }
 
-findAllFornecedor(){
+getAllFornecedor(){
   this.fornecedorService.getAllFornecedor().subscribe((resp: Fornecedor[]) =>{
     this.listaFornecedor = resp
   })
@@ -55,7 +55,7 @@ findByIdFornecedor(){
     this.fornecedorService.postFornecedor(this.fornecedor).subscribe((resp: Fornecedor) =>{
       this.fornecedor = resp
       alert('Fornecedor cadastrado!')
-      this.findAllFornecedor()
+      this.getAllFornecedor()
       this.fornecedor = new Fornecedor()
     })
   }
