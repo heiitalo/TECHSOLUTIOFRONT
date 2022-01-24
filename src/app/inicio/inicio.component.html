@@ -5,8 +5,8 @@
           <tr>
 
               <!-- <th>Imagem</th> -->
-              <th>Fornecedor</th>
               <th>Produto</th>
+              <th>Fornecedor</th>
               
               <th>Valor</th>
               
@@ -68,7 +68,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-success" (click)='cadastrarProduto()'>Salvar Produto</button>
+          <button type="button" class="btn btn-success" (click)='cadastrarProduto()' data-dismiss="modal">Salvar Produto</button>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#NovoFornecedor">
             Novo Fornecedor
           </button>
@@ -100,7 +100,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success" (click)='cadastrar()'>Salvar Fornecedor</button>
+        <button type="button" class="btn btn-success" (click)='cadastrar()' data-dismiss="modal">Salvar Fornecedor</button>
       </div>
     </div>
   </div>

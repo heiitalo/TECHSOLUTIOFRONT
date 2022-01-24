@@ -27,15 +27,16 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(){
 
-    //  if(environment.token ==''){
-    //    alert('Logue para poder continuar')
-    //    this.router.navigate(['/entrar'])
-    //  }
+      if(environment.token ==''){
+        alert('Logue para poder continuar')
+        this.router.navigate(['/entrar'])
+      }
 
      this.getAllFornecedor()
      this.getAllProdutos()
 
      this.fornecedorService.refreshToken
+     this.produtoService.refreshToken
     
   }
 
